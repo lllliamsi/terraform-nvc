@@ -1,0 +1,25 @@
+# ========================================
+# Template clouds.yml untuk OpenStack di NVC
+# ----------------------------------------
+# File ini digunakan pada Terraform
+# untuk autentikasi tanpa menulis password di main.tf
+# penulisan password secara harcode bukan merupakan best practice (code dibawah dilakukan untuk percobaan sederhana)
+# ----------------------------------------
+# file ini dapat di-dowonload pada portal horizon
+# ========================================
+
+clouds:
+  openstack:
+    auth:
+      auth_url: "https://<keystone-endpoint>:13000"
+      username: "<your-username>"
+      password: "<your-password>"
+      project_id: "<your-project-id>"
+      project_name: "<your-project-name>"
+      user_domain_name: "<your-domain-name>"
+    regions:
+    - west-java-2
+    - jakarta-2
+    - banten-1
+    interface: "public"
+    identity_api_version: 3
